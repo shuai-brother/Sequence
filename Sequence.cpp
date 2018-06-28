@@ -80,18 +80,14 @@ Sequence::Sequence(string s1)
 			else x[sa[i]]=++p;
 		} 
 	}
-	for(int i=2;i<=Leng;i++)
+	int k=0,j;
+	for(int i=1;i<=Leng;i++)x[sa[i]]=i;
+	for(int i=1;i<=Leng;y[x[i++]]=k)
+		for(k?k--:0,j=sa[x[i]-1];seq[j+k]==seq[i+k];k++);
+	for(int i=1;i<=Leng;i++)
 	{
-		int dog=0;
-		int j1=sa[i-1],j2=sa[i];
-		while(1)
-		{
-			if(seq[j1]==seq[j2])dog++,j1++,j2++;
-			else break;
-			if(j1==Leng+1||j2==Leng+1)break;
-		}	
-		if(dog>lgR)lgR=dog,pos=min(sa[i],sa[i-1]);
-		else if(dog==lgR&&min(sa[i],sa[i-1])<pos)pos=min(sa[i],sa[i-1]);
+		if(y[i]>lgR)lgR=y[i],pos=min(sa[i],sa[i-1]);
+		else if(y[i]==lgR&&pos>min(sa[i],sa[i-1]))pos=min(sa[i],sa[i-1]);
 	}
 }
 
